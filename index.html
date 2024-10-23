@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Banking System</h1>
+
+        <div id="account-form">
+            <h2>Create a New Account</h2>
+            <input type="text" id="accountNumber" placeholder="Account Number">
+            <input type="text" id="accountHolderName" placeholder="Account Holder Name">
+            <input type="number" id="initialBalance" placeholder="Initial Balance">
+            <select id="accountType">
+                <option value="Savings">Savings</option>
+                <option value="Current">Current</option>
+            </select>
+            <button onclick="createAccount()">Create Account</button>
+        </div>
+
+        <div id="account-access">
+            <h2>Access Account</h2>
+            <input type="text" id="accountAccessNumber" placeholder="Enter Account Number">
+            <button onclick="accessAccount()">Access</button>
+        </div>
+
+        <div id="account-actions" style="display:none;">
+            <h2>Account Actions</h2>
+            <p id="accountDetails"></p>
+            <button onclick="checkBalance()">Check Balance</button>
+            <button onclick="showTransactionHistory()">Transaction History</button>
+            <input type="number" id="depositAmount" placeholder="Deposit Amount">
+            <button onclick="deposit()">Deposit</button>
+            <input type="number" id="withdrawAmount" placeholder="Withdraw Amount">
+            <button onclick="withdraw()">Withdraw</button>
+            <button onclick="applyInterest()">Apply Interest (Savings Only)</button>
+        </div>
+
+        <div id="output"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -8,14 +8,14 @@ class BankAccount
         this.accountHolderName = accountHolderName;
         this.balance = initialBalance;
         this.accountType = accountType;
-        this.transactionHistory = [`Account created with balance: $${initialBalance}`];
+        this.transactionHistory = [`Account created with balance: ₹$(initialBalance}`];
     }
 
     deposit(amount) 
     {
         this.balance += amount;
-        this.transactionHistory.push(`Deposited: $${amount}`);
-        return `Deposited $${amount}. New Balance: $${this.balance}`;
+        this.transactionHistory.push(`Deposited: ₹${amount}`);
+        return `Deposited ₹${amount}. New Balance: ₹${this.balance}`;
     }
 
     withdraw(amount) 
@@ -25,8 +25,8 @@ class BankAccount
             return 'Insufficient funds!';
         }
         this.balance -= amount;
-        this.transactionHistory.push(`Withdrew: $${amount}`);
-        return `Withdrew $${amount}. New Balance: $${this.balance}`;
+        this.transactionHistory.push(`Withdrew: ₹${amount}`);
+        return `Withdrew ₹${amount}. New Balance: ₹${this.balance}`;
     }
 
     applyInterest() 
@@ -35,8 +35,8 @@ class BankAccount
         {
             const interest = this.balance * 0.03;
             this.balance += interest;
-            this.transactionHistory.push(`Interest applied: $${interest}`);
-            return `Interest of $${interest} applied. New Balance: $${this.balance}`;
+            this.transactionHistory.push(`Interest applied: ₹${interest}`);
+            return `Interest of ₹${interest} applied. New Balance: ₹${this.balance}`;
         }
         return 'Interest is only applicable to Savings accounts.';
     }
@@ -48,12 +48,12 @@ class BankAccount
 
     checkBalance() 
     {
-        return `Current Balance: $${this.balance}`;
+        return `Current Balance: ₹${this.balance}`;
     }
 
     getDetails() 
     {
-        return `Account Number: ${this.accountNumber}<br>Account Holder: ${this.accountHolderName}<br>Account Type: ${this.accountType}<br>Balance: $${this.balance}`;
+        return `Account Number: ${this.accountNumber}<br>Account Holder: ${this.accountHolderName}<br>Account Type: ${this.accountType}<br>Balance: ₹${this.balance}`;
     }
 }
 
